@@ -1,0 +1,88 @@
+*{
+    font-family: "Roboto", "Shrickhand",sans-serif;
+}
+/* Mise en page de l'entête */
+.entete-de-page{
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+.conteneur-logo{
+    padding: 25px;
+}
+.conteneur-logo img{
+    width: 300px;
+}
+/* Fin Mise en page de l'entête */
+/* Mise en page du bloc de localisation*/
+.localisation{
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d3d3d3;
+}
+.pointe{
+    font-size: 2rem;
+    padding: 15px;
+    margin: 15px;
+}
+.lieu{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.titres_entetes{
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+h1{
+    text-align: center;
+}
+.titre-secondaire{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;   
+}
+.sous-titre{
+    font-size: 1.7rem;
+    font-weight: 300;
+
+}
+.explorer{
+    margin-left: 50px;
+    margin-right: 50px;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background:linear-gradient(#ff79da,#9356dc);
+    border-radius: 60px;
+    transition-duration:0.25s ;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0,0,0,0.25);
+}
+.explorer:hover{
+    background-color:whitesmoke;
+    box-shadow:0.30rem 0.30rem 15px rgba(0,0,0,0.7);
+}
+.fonctionnement{
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: white;
+}
+h2{
+    font-size: 2rem;
+    padding: 50px 50px 50px 0;
+}
