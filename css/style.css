@@ -178,7 +178,7 @@ color:#9356dc;
     flex-direction: column;
     padding-left: 50px;
     background-color: whitesmoke;
-   border: 5px solid red; 
+   
 }
 .lien-carte-resto{
     display: block;  /* toujours pour des raisons de dimensions à créér*/
@@ -288,7 +288,7 @@ color:#9356dc;
     flex-direction: column;
     padding-right: 50px;
     background-color:#353535;
-    border: 5px solid blue;
+    
 }
 .logo-pdp{
     color: white;
