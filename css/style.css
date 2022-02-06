@@ -1,5 +1,6 @@
 *{
     font-family: "Roboto", "Shrickhand",sans-serif;
+ 
 }
 /* Mise en page de l'entête */
 .entete-de-page{
@@ -35,10 +36,13 @@
 .lieu{
     font-size: 1.5rem;
     font-weight: 500;
+    margin-bottom: 30px;
 }
 .titres_entetes{
     margin-left: 50px;
     margin-right: 50px;
+    padding-bottom: 100px;
+    padding-top: 50px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -56,6 +60,7 @@ h1{
 .sous-titre{
     font-size: 1.7rem;
     font-weight: 300;
+    padding-bottom: 30px;
 
 }
 .explorer{
@@ -78,11 +83,258 @@ h1{
     box-shadow:0.30rem 0.30rem 15px rgba(0,0,0,0.7);
 }
 .fonctionnement{
-    margin-left: 50px;
-    margin-right: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
     background-color: white;
 }
 h2{
     font-size: 2rem;
-    padding: 50px 50px 50px 0;
+    padding:25px;
 }
+.choix-restau{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    counter-reset: mon_compteur ; /* initialisation du compteur pour les éléments de la liste ordonée */
+}
+.elt-de-liste{
+    /* ici l'element de la liste est mis en forme */
+    display: flex;
+    align-items: center;
+    background-color:whitesmoke;
+    text-decoration:none;
+    box-shadow: 5px 5px 15px rgba(128, 128, 128,0.5);
+    margin-bottom: 25px;
+    list-style-type: none; /* on retire le style par défaut de l'element ol */
+    
+    counter-increment: mon_compteur; /*incrémentation du compteur pour chaque element de liste */
+    border-radius: 20px; 
+}
+.elt-de-liste::before{   /* création du pseudo element ::before afin de générer les numéros grâce au compteur*/
+    display: flex;   /* par défaut inline, on le passe à flex pour avoir des dimensions à fixer et le centrage facile  */ 
+    justify-content: center;
+    align-items: center;
+    content: counter(mon_compteur);  /* affichage du numéro représenté par le nombre contenu dans le compteur */
+    width: 40px; 
+    height: 40px;
+    background-color:#9356dc;
+    border-radius: 100%;
+    font-weight: 500;
+    font-size: 1.5em;
+    color: white;
+    margin-left: -20px;
+}
+ .elt-de-liste:hover{
+    box-shadow: 15px 15px 35px rgba(128, 128, 128,0.5);
+ }
+ .choix-restau .elt-de-liste:last-child{
+    background-color: rgba(147, 86, 220,0.15);
+ }
+ .elt-liste{
+    text-decoration:none;
+ }
+.elt-fonctionnement{
+    /* une div contenant l'icone et le texte dans un paragraphe */
+     
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    }
+
+.material-icons{
+    /* les icones de google, l'iphone et la liste*/
+    
+font-size: 1.25rem;
+padding-left: 10px;
+padding-right:10px;
+color: grey;
+}
+
+.fonction{
+    /* le paragraphe contenant le texte de l'element du fonctionnement */
+padding-left: 10px;
+padding-right: 10px;
+color: black;
+font-size: 1.25rem;
+font-family: roboto;
+font-weight: 500;
+}
+.fa-store{
+    /* l'icone fontawesome du restau */
+font-size: 1.25rem;
+padding-left: 10px;
+padding-right:10px;
+color:#9356dc;
+}
+.restaurants{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 50px;
+    background-color: whitesmoke;
+   border: 5px solid red; 
+}
+.lien-carte-resto{
+    display: block;  /* toujours pour des raisons de dimensions à créér*/
+    width: 100%;
+    text-decoration:none; /*toujours pour enlever le soulignement par défaut des ancres  <a>*/
+   
+    
+}
+.carte-resto{ 
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 1rem;
+    margin: 2.5rem;
+    border-radius: 50px;
+    box-shadow: 15px 15px 35px rgba(128, 128, 128,0.5);
+
+}
+.conteneur-photo-resto{
+    width: 100%;
+    border-radius: 50px;
+   
+   
+}
+.image { 
+    width: 100%; /* pour appliquer object-fit, la width doit être définie sur l'image */
+    height: 1200px;
+    object-fit: cover;
+
+}
+.photo-resto{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    
+}
+.etiquette{
+    width: 65px;
+    height: 20px;
+    position: absolute;
+    top: 30px;
+    right: 45px;
+    background-color: #99e2d0;
+    color: green;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-family: roboto;
+
+
+}
+.les-infos-resto{
+    display: flex;
+    justify-content: space-between;
+   
+
+}
+.infos-resto{
+    list-style-type: none;
+    padding: 2rem;
+    
+
+}
+.nom-resto{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: black;
+    padding-bottom: 1rem;
+
+}
+.lieu-resto{
+    color: black;
+    font-family: roboto;
+    font-size: 2rem;
+    font-weight: 300;
+
+}
+.bouton-menu{
+
+}
+.bouton-carte{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+}
+.fa-heart{
+    color: black;
+    font-size: 50px; 
+   /* position: absolute;
+    right: 200px;  */
+}
+.lun{
+    color: blue;
+}
+.ledeux{
+    color: chartreuse;
+}
+
+.pied-de-page{
+    width: 100%;
+    margin-top: 75px;
+    
+}
+.conteneur-pdp{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+    background-color:#353535;
+    border: 5px solid blue;
+}
+.logo-pdp{
+    color: white;
+    font-family: 'shrikhand', 'cursive';
+    padding-top:1rem;
+    padding-left: 5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.liste-pdp{
+    list-style: none;
+    padding-left:5rem;
+    padding-top:1rem;
+    margin: 0;
+}
+.elt-liste-pdp{
+    margin: 0.5rem;
+    font-size: 1.5rem;
+}
+.elt-liste-pdp:first-child{
+    margin-top: 0;
+    }
+.elt-liste-pdp:last-child{
+margin-bottom: 2rem;
+}
+.lien-pdp{
+    color: white;
+    text-decoration: none;
+}
+.lien-pdp:hover{
+    text-decoration: underline;
+}
+.icone-pdp{
+    color: white; 
+    width: 1.2rem;
+    margin-right: 0.5rem;
+    padding-right:10px;
+    }
+.titre-pdp{
+        font-family: shrikhand;
+        
+        padding:0px;
+        margin: 0px;
+        color: white;
+    }
+    .liste-pied-de-page{
+        list-style-type: none;
+        line-height: 2em;
+    }
