@@ -183,6 +183,8 @@ padding-left: 10px;
 padding-right:10px;
 color:#9356dc;
 }
+
+
 .restaurants{
     width: 100%;
     display: flex;
@@ -240,6 +242,35 @@ color:#9356dc;
     font-weight: 500;
     font-family: roboto;
 }
+/* Début mise en forme tablette index.html */
+@media screen and (min-width:769px) {
+    .explorer{
+        max-width: 50%;
+        padding: 15px 50px 15px 50px;
+        margin: auto;
+    }
+    .choix-restau{
+       flex-flow: row nowrap;
+       flex: 1 0 30%;
+    }
+    .elt-de-liste::before{
+        max-width: 2rem;
+        max-height: 2rem;
+    }
+    .titre-sectionR{
+        width: 100%;
+    }
+    .lien-carte-resto{
+        width: 50%;
+    }
+    .restaurants{
+        flex-flow: row wrap;
+        
+    }
+}
+/* Fin  mise en forme tablette index.html */
+
+
 .les-infos-resto{
     display: flex;
     justify-content: space-between;
@@ -601,3 +632,16 @@ margin-bottom: 2rem;
     
   }
 /*Fin  mise en page des menus */
+/* Début mise en forme tablette les pages des menus */
+@media screen and (min-width:769px) {
+    .sous-menus{
+        display: flex;
+        justify-content: space-around;
+    }
+    .commandBtn{
+        padding:1rem 2rem 1rem 2rem;
+        font-size: 1.5rem;
+    }
+}
+/* Fin mise en forme tablette les pages menus */
+ 
