@@ -15,7 +15,7 @@
      <!-- import des polices googlefonts pour utiliser des icones-->
      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Ohmyfood</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="entete_menus">
@@ -23,13 +23,16 @@
             <i class="fa fa-arrow-left fleche"></i></a>
             <img src="../images/logo/ohmyfood@2x.svg" alt="Logo du site">  
      </header>
-     <img src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="photo">
-     <main class="conteneur-menus">
+     <div class="photo-entete">
+        <img class="photo-menu" src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"   alt="photo"> 
+     </div>
+     
+     <main class="conteneur menus">
         <header class="entete-menu">
             <h2 class="titre-menu">Le delice des sens<h2>
-                <div class="bouton-menu bouton-carte">
-                    <i class=" far fa-heart fa-2x"></i>
-                    <i class=" far fa-heart fa-2x"></i> 
+                <div class="menu-com menu-sans">
+                    <i class=" far fa-heart fa-2x com-menu"></i>
+                    <i class=" far fa-heart fa-2x com-menu"></i> 
                 </div>  
         </header>
         <div class="sous-menus">
@@ -195,8 +198,8 @@
         </div>
     </main> 
     
-     <footer class="pied_de_page">
-        <div class="conteneur">
+    <footer class="pied-de-page">
+        <div class="conteneur-pdp&">
             <span class="logo-pdp">ohmyfood</span>
             <ul class="liste-pdp">
                 <li class="elt-liste-pdp"> 
@@ -221,11 +224,7 @@
                     </a>
                    </li>
             </ul>
-
-
         </div>
-      
-       
     </footer>
 
 </body>

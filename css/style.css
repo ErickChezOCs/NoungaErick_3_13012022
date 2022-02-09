@@ -1,27 +1,30 @@
+/*Sauvegarde  du css en vue de réutilisation comprise 
+header{} Non utilisé: c'est le conteneur principal du logo et de la localisation
+.titres_entetes{} section contenant de réservez à nos restaurants.
+.fonctionnement{} section contenant les étapes 1,2 et 3
+.restaurants{} section contenant les cartes des restaurants
+*/
 *{
     font-family: "Roboto", "Shrickhand",sans-serif;
- 
+    box-sizing: border-box;
+}
+html{
+    font-size: 14px;
 }
 /* Mise en page de l'entête */
 .entete-de-page{
-    margin-left: 50px;
-    margin-right: 50px;
     width: 100%;
     display: flex;
     justify-content: center;
     background-color: white;
 }
 .conteneur-logo{
-    padding: 25px;
+    padding: 1vw;
 }
-.conteneur-logo img{
+.logotype{
     width: 300px;
 }
-/* Fin Mise en page de l'entête */
-/* Mise en page du bloc de localisation*/
 .localisation{
-    margin-left: 50px;
-    margin-right: 50px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -29,28 +32,29 @@
     background-color: #d3d3d3;
 }
 .pointe{
-    font-size: 2rem;
-    padding: 15px;
-    margin: 15px;
+    font-size: 1.5rem;
+    padding: 0.25rem 1rem 1rem 1rem;
+    margin: 1.5rem;
 }
 .lieu{
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 30px;
 }
+/* Mise en page des titres */
 .titres_entetes{
-    margin-left: 50px;
-    margin-right: 50px;
-    padding-bottom: 100px;
-    padding-top: 50px;
+    padding-bottom: 2rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-color: whitesmoke;
 }
-h1{
+.titre{
     text-align: center;
+}
+.titre-section1{
+    padding-bottom: 0rem;
 }
 .titre-secondaire{
     text-align: center;
@@ -58,25 +62,28 @@ h1{
     margin-bottom: 0;   
 }
 .sous-titre{
-    font-size: 1.7rem;
+    font-size: 1.25rem;
     font-weight: 300;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 
 }
 .explorer{
-    margin-left: 50px;
-    margin-right: 50px;
     text-decoration: none;
     text-align: center;
     color: white;
-    padding: 2rem;
-    font-weight: 600;
-    font-size: 1.5rem;
+    margin: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 500;
+    font-size: 1.25rem;
     cursor: pointer;
     background:linear-gradient(#ff79da,#9356dc);
     border-radius: 60px;
     transition-duration:0.25s ;
     box-shadow: 0.25rem 0.25rem 10px rgba(0,0,0,0.25);
+ 
 }
 .explorer:hover{
     background-color:whitesmoke;
@@ -86,31 +93,38 @@ h1{
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding-left: 50px;
     background-color: white;
 }
 h2{
     font-size: 2rem;
-    padding:25px;
+   
 }
 .choix-restau{
     width: 100%;
     display: flex;
+    justify-content:center ;
+    align-items: center;
     flex-direction: column;
     counter-reset: mon_compteur ; /* initialisation du compteur pour les éléments de la liste ordonée */
 }
+.titre-section{
+    text-align: left;
+    padding-left: 1rem;
+}
 .elt-de-liste{
     /* ici l'element de la liste est mis en forme */
+    width: 100%;
     display: flex;
     align-items: center;
     background-color:whitesmoke;
     text-decoration:none;
     box-shadow: 5px 5px 15px rgba(128, 128, 128,0.5);
-    margin-bottom: 25px;
+    margin-bottom: 2.5rem;
+    margin-right: 2rem;
     list-style-type: none; /* on retire le style par défaut de l'element ol */
-    
     counter-increment: mon_compteur; /*incrémentation du compteur pour chaque element de liste */
     border-radius: 20px; 
+    cursor: pointer;
 }
 .elt-de-liste::before{   /* création du pseudo element ::before afin de générer les numéros grâce au compteur*/
     display: flex;   /* par défaut inline, on le passe à flex pour avoir des dimensions à fixer et le centrage facile  */ 
@@ -126,8 +140,8 @@ h2{
     color: white;
     margin-left: -20px;
 }
- .elt-de-liste:hover{
-    box-shadow: 15px 15px 35px rgba(128, 128, 128,0.5);
+.elt-de-liste:hover{
+    box-shadow: 10px 10px 10px rgba(128, 128, 128,0.5);
  }
  .choix-restau .elt-de-liste:last-child{
     background-color: rgba(147, 86, 220,0.15);
@@ -135,9 +149,8 @@ h2{
  .elt-liste{
     text-decoration:none;
  }
-.elt-fonctionnement{
-    /* une div contenant l'icone et le texte dans un paragraphe */
-     
+ .elt-fonctionnement{
+    /* une div contenant l'icone et le texte dans un paragraphe */   
     display: flex;
     width: 100%;
     height: 5rem;
@@ -145,8 +158,7 @@ h2{
     align-items: center;
     padding-right: 10px;
     padding-left: 10px;
-    }
-
+}
 .material-icons{
     /* les icones de google, l'iphone et la liste*/
     
@@ -155,7 +167,6 @@ padding-left: 10px;
 padding-right:10px;
 color: grey;
 }
-
 .fonction{
     /* le paragraphe contenant le texte de l'element du fonctionnement */
 padding-left: 10px;
@@ -175,138 +186,151 @@ color:#9356dc;
 .restaurants{
     width: 100%;
     display: flex;
-    flex-direction: column;
-    padding-left: 50px;
-    background-color: whitesmoke;
-   
+    flex-direction: column;  
+    background-color: whitesmoke; 
+    padding-bottom: 5rem;
 }
 .lien-carte-resto{
-    display: block;  /* toujours pour des raisons de dimensions à créér*/
+   /* display: block;   toujours pour des raisons de dimensions à créér*/
+    display: flex;
     width: 100%;
     text-decoration:none; /*toujours pour enlever le soulignement par défaut des ancres  <a>*/
-   
-    
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 2rem;
 }
 .carte-resto{ 
+    width:100%;
     display:flex;
     flex-direction: column;
     position: relative;
     padding-bottom: 1rem;
-    margin: 2.5rem;
-    border-radius: 50px;
+    border-radius: 30px;
     box-shadow: 15px 15px 35px rgba(128, 128, 128,0.5);
-
 }
 .conteneur-photo-resto{
     width: 100%;
-    border-radius: 50px;
-   
-   
-}
+    border-radius: 30px;  
+    
+}  
 .image { 
-    width: 100%; /* pour appliquer object-fit, la width doit être définie sur l'image */
-    height: 1200px;
+    width: 100%; /* pour appliquer object-fit, la width doit être définie sur l'image*/
+    height: 12rem;
     object-fit: cover;
-
 }
 .photo-resto{
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-    
-}
+    max-width:100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;    
+} 
 .etiquette{
-    width: 65px;
-    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100px;
+    height: 30px;
     position: absolute;
-    top: 30px;
-    right: 45px;
+    top: 10px;
+    right: 15px;
     background-color: #99e2d0;
     color: green;
     padding: 10px 20px;
     border-radius: 5px;
     font-weight: 500;
     font-family: roboto;
-
-
 }
 .les-infos-resto{
     display: flex;
     justify-content: space-between;
-   
-
+    margin:0 2rem 0 0;
 }
 .infos-resto{
     list-style-type: none;
-    padding: 2rem;
-    
-
+   
 }
 .nom-resto{
-    font-size: 2.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: black;
-    padding-bottom: 1rem;
-
+    padding-bottom: 0.5rem;
 }
 .lieu-resto{
     color: black;
     font-family: roboto;
-    font-size: 2rem;
+    font-size: 1.25rem;
     font-weight: 300;
-
 }
-.bouton-menu{
-
-}
-.bouton-carte{
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 2rem;
-}
-.fa-heart{
+.far{
     color: black;
-    font-size: 50px; 
-   /* position: absolute;
-    right: 200px;  */
 }
-.lun{
-    color: blue;
+.accueil-com{
+    height: 2rem;
+    width:2rem;
+    border: 0 solid transparent;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    background-color:black;
 }
-.ledeux{
-    color: chartreuse;
+.accueil-com:hover::before{
+    opacity: 1;
+}
+.accueil-com::before{
+    opacity: 0;
+    transition: .5s;
+    content: "";
+    background: linear-gradient(0deg,#9356dc,#ff79da);
+}
+.accueil-com::before,.com-accueil{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.accueil-com:hover .accueil-sans{
+    opacity: 0;
+}
+.com-accueil{
+    transition-duration: .25s;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mix-blend-mode: lighten;
 }
 
 .pied-de-page{
     width: 100%;
-    margin-top: 75px;
-    
+    margin-top: 0rem;
+    background-color:#353535;
+
 }
 .conteneur-pdp{
     width: 100%;
     display: flex;
-    flex-direction: column;
-    padding-right: 50px;
-    background-color:#353535;
-    
+    flex-direction: column;    
 }
 .logo-pdp{
+    display: block;
     color: white;
     font-family: 'shrikhand', 'cursive';
     padding-top:1rem;
-    padding-left: 5rem;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
+    padding-left: 2.5rem;
 }
 .liste-pdp{
     list-style: none;
-    padding-left:5rem;
     padding-top:1rem;
     margin: 0;
 }
 .elt-liste-pdp{
     margin: 0.5rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 .elt-liste-pdp:first-child{
     margin-top: 0;
@@ -324,17 +348,255 @@ margin-bottom: 2rem;
 .icone-pdp{
     color: white; 
     width: 1.2rem;
-    margin-right: 0.5rem;
-    padding-right:10px;
+  
+  
     }
 .titre-pdp{
         font-family: shrikhand;
-        
-        padding:0px;
-        margin: 0px;
-        color: white;
-    }
-    .liste-pied-de-page{
+        padding-top:3rem;
+        margin: 3rempx;
+        color:white;
+}
+.liste-pied-de-page{
         list-style-type: none;
         line-height: 2em;
     }
+/* Mise en page des menus */
+.entete_menus{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.fleche{
+    font-size: 2rem;
+    color: black;
+    position: absolute;
+    left: 0.5rem; 
+}
+.photo-menu{
+    max-width: 100%;
+    max-height: 35rem;
+    width: 100%;
+    object-fit: cover;
+}
+.menus{
+    margin-top: -5rem;
+    border-radius: 30px;
+    background-color:#f6f6f6 ;
+    z-index: 1;
+    position: relative;
+}
+.entete-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem 0 1rem;
+}
+.titre-menu{
+    font-family: shrikhand,cursive;
+}
+.menu-com{
+    height: 2rem;
+    width:2rem;
+    border: 0 solid transparent;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    background-color:black;
+}
+.menu-com:hover::before{
+    opacity: 1;
+}
+.menu-com::before{
+    opacity: 0;
+    transition: .5s;
+    content: "";
+    background: linear-gradient(0deg,#9356dc,#ff79da);
+}
+.menu-com::before,.com-menu{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.menu-com:hover .menu-sans{
+    opacity: 0;
+}
+.com-menu{
+    transition-duration: .25s;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    mix-blend-mode: lighten;
+}
+.sous-menus{
+    display: grid;
+}
+.sous-menu{
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 1rem;
+}
+.titre-sous-menu{
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 0.5rem;
+    font-weight: normal;
+}
+.titre-sous-menu::after{
+    content: "";
+    width: 3rem;
+    height: 0.25rem;
+    background-color: #99e2d0;
+    position: absolute;
+    left: 0;
+    bottom:0;
+}
+/* Début Règles @keyframes pour le contrôle de l'animation */
+@keyframes apparition-elt {
+    0% {
+        transform: scale(0)
+      }
+      100% {
+        transform: scale(1);
+      }
+    
+}
+/* Fin règle @keyframes pour le contrôle de l'animation */
+
+.eltmenu{
+    background-color: white;
+    padding:1rem;
+    display: flex;
+    border-radius: 0.75rem;
+    margin: 1rem 0;
+    box-shadow: 0.25rem 0.25rem 1re rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+    animation:apparition-elt .6s;
+    animation-timing-function: cubic-bezier(.5,1.58,.34,.82);
+    animation-fill-mode: both;
+    transform: scale(0);
+    max-width: 100%;
+}
+.entete-eltmenu{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1;
+}
+.titre-eltmenu{
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.detail-eltmenu{
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.prix-eltmenu{
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-left: 0.5rem;
+}
+.elt-menu-cocher{
+    background-color: #99e2d0;
+    margin: -1rem -5rem -1rem 1rem;
+    width: 4rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition-duration: 0.5s;
+}
+.eltmenu:hover .elt-menu-cocher{
+    margin-right: -1rem;
+}
+.conteneur-icone{
+    height: 1.6rem;
+    width: 1.6rem;
+    background-color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 100px;
+    transform: rotate(180deg);
+    transition-duration: 0.5s;
+}
+
+.eltmenu:hover .conteneur-icone{
+    transform: rotate(0);
+}
+.icone-eltmenu{
+    color: #99e2d0;
+}
+
+.delai-0{
+    animation-delay: 0s; 
+}
+.delai-1{
+    animation-delay: 0.1s; 
+}
+.delai-2{
+    animation-delay: 0.2s; 
+}
+.delai-3{
+    animation-delay: 0.3s; 
+}
+.delai-4{
+    animation-delay: 0.4s; 
+}
+.delai-5{
+    animation-delay: 0.5s; 
+}
+.delai-6{
+    animation-delay: 0.6s; 
+}
+.delai-7{
+    animation-delay: 0.7s; 
+}
+.delai-8{
+    animation-delay: 0.8s; 
+}
+
+.ibaro-bouton{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 3rem 0;
+}
+.commandBtn{
+    border: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: white;
+  background-color: #686868;
+  cursor: pointer;
+  transition-duration: 0.25s;
+  background:linear-gradient(#ff79da,#9356dc);
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.commandBtn:hover {
+    background-color: white;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+}
+.commandBtn a {
+    text-decoration: none;
+    color: inherit;
+    
+  }
+/*Fin  mise en page des menus */
