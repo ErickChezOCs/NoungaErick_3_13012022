@@ -1,9 +1,3 @@
-/*Sauvegarde  du css en vue de rÃ©utilisation comprise
-header{} Non utilisÃ©: c'est le conteneur principal du logo et de la localisation
-.titres_entetes{} section contenant de rÃ©servez Ã  nos restaurants.
-.fonctionnement{} section contenant les Ã©tapes 1,2 et 3
-.restaurants{} section contenant les cartes des restaurants
-*/
 *{
     font-family: "Roboto", "Shrickhand",sans-serif;
     box-sizing: border-box;
@@ -22,11 +16,12 @@ html{
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2; 
+  z-index: 1; 
   display: flex;
   justify-content: center;
   align-items: center;
   animation: disparait 6000ms 3000ms forwards;
+  animation-timing-function:ease-out;
   transform-origin: top;
 }
 .chargeur{
@@ -48,7 +43,7 @@ html{
   background-color: transparent;
   animation-name: tourne;
   animation-duration: 3000ms;
-  animation-direction: normal;
+  animation-direction:normal;
   animation-iteration-count: 1;
   animation-delay: 100ms;
   display: flex;
@@ -64,7 +59,7 @@ html{
   justify-content: center;
   align-items: center;
   color: black;
-  font-family: Shirkhand;
+  font-family: shrikhand,cursive;;
 
 }
 .milieu{
@@ -382,8 +377,6 @@ color:#9356dc;
     }
 }
 /* Fin  mise en forme tablette index.html */
-
-
 .les-infos-resto{
     display: flex;
     justify-content: space-between;
@@ -391,7 +384,6 @@ color:#9356dc;
 }
 .infos-resto{
     list-style-type: none;
-
 }
 .nom-resto{
     font-size: 1.25rem;
@@ -406,8 +398,6 @@ color:#9356dc;
     font-weight: 300;
 }
 /*Mise en page des coeurs avec animation */
-
-
 .accueil-com{
   /* la div qui contient les coeurs*/
   width: 3rem;
@@ -464,18 +454,7 @@ color:#9356dc;
 .accueil-com:hover::after{
   animation-name: irradier;
 }
-@media(any-pointer:coarse){
-  .accueil-com{
-    /* la div qui contient les coeurs*/
-    width: 3rem;
-    height: 3rem;
-    border: 2px solid transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-}
+
 
 /* Fin mise en page coeur avec animation */
 
