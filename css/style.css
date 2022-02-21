@@ -448,6 +448,7 @@ color:#9356dc;
   color: transparent;
   background-image: radial-gradient(#ff79da,#9356dc);
   background-clip: text;
+  -webkit-background-clip: text;
   animation-duration: 500ms;
   animation-delay: 50ms;
   animation-fill-mode: forwards;
@@ -473,10 +474,7 @@ color:#9356dc;
     justify-content: center;
     align-items: center;
     position: relative;
-
   }
-
-
 }
 
 /* Fin mise en page coeur avec animation */
