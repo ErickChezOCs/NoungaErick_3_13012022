@@ -1,7 +1,7 @@
-/*Sauvegarde  du css en vue de réutilisation comprise 
-header{} Non utilisé: c'est le conteneur principal du logo et de la localisation
-.titres_entetes{} section contenant de réservez à nos restaurants.
-.fonctionnement{} section contenant les étapes 1,2 et 3
+/*Sauvegarde  du css en vue de rÃ©utilisation comprise
+header{} Non utilisÃ©: c'est le conteneur principal du logo et de la localisation
+.titres_entetes{} section contenant de rÃ©servez Ã  nos restaurants.
+.fonctionnement{} section contenant les Ã©tapes 1,2 et 3
 .restaurants{} section contenant les cartes des restaurants
 */
 *{
@@ -11,7 +11,118 @@ header{} Non utilisé: c'est le conteneur principal du logo et de la localisatio
 html{
     font-size: 14px;
 }
-/* Mise en page de l'entête */
+/*Mise en page chargement */
+
+.chargement{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(191,182,218,0.95);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  /* On passe le display du chargeur à none */
+  display: none;
+  /* le temps de finir les transitions sur les coeurs */
+  justify-content: center;
+  align-items: center;
+  animation: disparait 6000ms 3000ms forwards;
+  transform-origin: top;
+}
+.chargeur{
+  width: 300px;
+  height: 300px;
+  border: 0px solid royalblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cercle{
+  border-radius: 50%;
+  margin: 0px;
+}
+.exterieur{
+  width: 250px;
+  height: 250px;
+  border: 20px dotted #9356dc;
+  background-color: transparent;
+  animation-name: tourne;
+  animation-duration: 3000ms;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-delay: 100ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.interieur{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #99e2d0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-family: Shirkhand;
+
+}
+.milieu{
+  width: 150px;
+  height: 150px;
+  border:10px dashed #ff79da;
+  border-radius: 50%;
+  animation-name: tourner;
+  animation-duration: 3000ms;
+  animation-delay: 100ms;
+  animation-direction: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes tourne {
+  0% {
+    transform:rotate(0deg);
+  }
+
+  95%{
+    transform: rotate(360deg);
+  }
+  100%{
+    opacity: 0%;
+  }
+}
+@keyframes tourner {
+  0% {
+    transform:scale(1);
+  }
+  75%{
+    transform: scale(1.9);
+  }
+  95%{
+    transform: scale(1.4);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+@keyframes disparait {
+  from{
+    opacity: 0%;
+    transform: scale(1);
+  }
+  to{
+    opacity: 0%;
+    transform: scale(0);
+  }
+}
+
+
+
+/* Fin mise en page chargement */
+/* Mise en page de l'entÃªte */
 .entete-de-page{
     width: 100%;
     display: flex;
@@ -20,6 +131,9 @@ html{
 }
 .conteneur-logo{
     padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .logotype{
     width: 300px;
@@ -59,7 +173,7 @@ html{
 .titre-secondaire{
     text-align: center;
     margin-top: 0;
-    margin-bottom: 0;   
+    margin-bottom: 0;
 }
 .sous-titre{
     font-size: 1.25rem;
@@ -83,7 +197,7 @@ html{
     border-radius: 60px;
     transition-duration:0.25s ;
     box-shadow: 0.25rem 0.25rem 10px rgba(0,0,0,0.25);
- 
+
 }
 .explorer:hover{
     background-color:whitesmoke;
@@ -97,7 +211,7 @@ html{
 }
 h2{
     font-size: 2rem;
-   
+
 }
 .choix-restau{
     width: 100%;
@@ -105,7 +219,7 @@ h2{
     justify-content:center ;
     align-items: center;
     flex-direction: column;
-    counter-reset: mon_compteur ; /* initialisation du compteur pour les éléments de la liste ordonée */
+    counter-reset: mon_compteur ; /* initialisation du compteur pour les Ã©lÃ©ments de la liste ordonÃ©e */
 }
 .titre-section{
     text-align: left;
@@ -116,22 +230,23 @@ h2{
     width: 100%;
     display: flex;
     align-items: center;
+    /* justify-content: center; */
     background-color:whitesmoke;
     text-decoration:none;
     box-shadow: 5px 5px 15px rgba(128, 128, 128,0.5);
     margin-bottom: 2.5rem;
     margin-right: 2rem;
-    list-style-type: none; /* on retire le style par défaut de l'element ol */
-    counter-increment: mon_compteur; /*incrémentation du compteur pour chaque element de liste */
-    border-radius: 20px; 
+    list-style-type: none; /* on retire le style par dÃ©faut de l'element ol */
+    counter-increment: mon_compteur; /*incrÃ©mentation du compteur pour chaque element de liste */
+    border-radius: 20px;
     cursor: pointer;
 }
-.elt-de-liste::before{   /* création du pseudo element ::before afin de générer les numéros grâce au compteur*/
-    display: flex;   /* par défaut inline, on le passe à flex pour avoir des dimensions à fixer et le centrage facile  */ 
+.elt-de-liste::before{   /* crÃ©ation du pseudo element ::before afin de gÃ©nÃ©rer les numÃ©ros grÃ¢ce au compteur*/
+    display: flex;   /* par dÃ©faut inline, on le passe Ã  flex pour avoir des dimensions Ã  fixer et le centrage facile  */
     justify-content: center;
     align-items: center;
-    content: counter(mon_compteur);  /* affichage du numéro représenté par le nombre contenu dans le compteur */
-    width: 40px; 
+    content: counter(mon_compteur);  /* affichage du numÃ©ro reprÃ©sentÃ© par le nombre contenu dans le compteur */
+    width: 40px;
     height: 40px;
     background-color:#9356dc;
     border-radius: 100%;
@@ -147,10 +262,11 @@ h2{
     background-color: rgba(147, 86, 220,0.15);
  }
  .elt-liste{
+    width: 90%;
     text-decoration:none;
  }
  .elt-fonctionnement{
-    /* une div contenant l'icone et le texte dans un paragraphe */   
+    /* une div contenant l'icone et le texte dans un paragraphe */
     display: flex;
     width: 100%;
     height: 5rem;
@@ -161,7 +277,7 @@ h2{
 }
 .material-icons{
     /* les icones de google, l'iphone et la liste*/
-    
+
 font-size: 1.25rem;
 padding-left: 10px;
 padding-right:10px;
@@ -183,26 +299,25 @@ padding-left: 10px;
 padding-right:10px;
 color:#9356dc;
 }
-
-
 .restaurants{
     width: 100%;
     display: flex;
-    flex-direction: column;  
-    background-color: whitesmoke; 
+    flex-direction: column;
+    background-color: whitesmoke;
     padding-bottom: 5rem;
 }
+
 .lien-carte-resto{
-   /* display: block;   toujours pour des raisons de dimensions à créér*/
+   /* display: block;   toujours pour des raisons de dimensions Ã  crÃ©Ã©r*/
     display: flex;
     flex-direction: column;
     width: 100%;
-    text-decoration:none; /*toujours pour enlever le soulignement par défaut des ancres  <a>*/
+    text-decoration:none; /*toujours pour enlever le soulignement par dÃ©faut des ancres  <a>*/
     padding-left: 15px;
     padding-right: 15px;
     margin-bottom: 2rem;
 }
-.carte-resto{ 
+.carte-resto{
     width:100%;
     display:flex;
     flex-direction: column;
@@ -213,19 +328,19 @@ color:#9356dc;
 }
 .conteneur-photo-resto{
     width: 100%;
-    border-radius: 30px;  
-    
-}  
-.image { 
-    width: 100%; /* pour appliquer object-fit, la width doit être définie sur l'image*/
+    border-radius: 30px;
+
+}
+.image {
+    width: 100%; /* pour appliquer object-fit, la width doit Ãªtre dÃ©finie sur l'image*/
     height: 12rem;
     object-fit: cover;
 }
 .photo-resto{
     max-width:100%;
     border-top-left-radius: 30px;
-    border-top-right-radius: 30px;    
-} 
+    border-top-right-radius: 30px;
+}
 .etiquette{
     display: flex;
     justify-content: center;
@@ -242,7 +357,7 @@ color:#9356dc;
     font-weight: 500;
     font-family: roboto;
 }
-/* Début mise en forme tablette index.html */
+/* DÃ©but mise en forme tablette index.html */
 @media screen and (min-width:769px) {
     .explorer{
         max-width: 50%;
@@ -265,7 +380,7 @@ color:#9356dc;
     }
     .restaurants{
         flex-flow: row wrap;
-        
+
     }
 }
 /* Fin  mise en forme tablette index.html */
@@ -278,7 +393,7 @@ color:#9356dc;
 }
 .infos-resto{
     list-style-type: none;
-   
+
 }
 .nom-resto{
     font-size: 1.25rem;
@@ -292,48 +407,81 @@ color:#9356dc;
     font-size: 1.25rem;
     font-weight: 300;
 }
-.far{
-    color: black;
-}
+/*Mise en page des coeurs avec animation */
+
+
 .accueil-com{
-    height: 2rem;
-    width:2rem;
-    border: 0 solid transparent;
-    padding:0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-    background-color:black;
-}
-.accueil-com:hover::before{
-    opacity: 1;
+  /* la div qui contient les coeurs*/
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
 }
 .accueil-com::before{
-    opacity: 0;
-    transition: .5s;
-    content: "";
-    background: linear-gradient(0deg,#9356dc,#ff79da);
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing:antialiased;
+  font-variant: normal;
+  font-style: normal;
+  font-size: 2em;
+  color: black;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 500;
+  content: "\f004";
+  position: absolute;
+  opacity: 100%;
 }
-.accueil-com::before,.com-accueil{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+.accueil-com::after{
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing:antialiased;
+  font-variant: normal;
+  font-style: normal;
+  font-size: 2em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  position: absolute;
+  opacity: 0%;
+  color: transparent;
+  background-image: radial-gradient(#ff79da,#9356dc);
+  background-clip: text;
+  animation-duration: 500ms;
+  animation-delay: 50ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.57,.36,.46,.92);
 }
-.accueil-com:hover .accueil-sans{
-    opacity: 0;
+@keyframes irradier {
+  to{
+    opacity: 100%;
+    transform: scale(1.2);
+  }
+
 }
-.com-accueil{
-    transition-duration: .25s;
-    background-color: #f6f6f6;
+.accueil-com:hover::after{
+  animation-name: irradier;
+}
+@media(any-pointer:coarse){
+  .accueil-com{
+    /* la div qui contient les coeurs*/
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    mix-blend-mode: lighten;
+    position: relative;
+
+  }
+
+
 }
+
+/* Fin mise en page coeur avec animation */
 
 .pied-de-page{
     width: 100%;
@@ -344,7 +492,7 @@ color:#9356dc;
 .conteneur-pdp{
     width: 100%;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 }
 .logo-pdp{
     display: block;
@@ -378,15 +526,15 @@ margin-bottom: 2rem;
     text-decoration: underline;
 }
 .icone-pdp{
-    color: white; 
+    color: white;
     width: 1.2rem;
-  
-  
+
+
     }
 .titre-pdp{
         font-family: shrikhand;
         padding-top:3rem;
-        margin: 3rempx;
+        margin: 3rem;
         color:white;
 }
 .liste-pied-de-page{
@@ -406,7 +554,7 @@ margin-bottom: 2rem;
     font-size: 2rem;
     color: black;
     position: absolute;
-    left: 0.5rem; 
+    left: 0.5rem;
 }
 .photo-menu{
     max-width: 100%;
@@ -430,45 +578,7 @@ margin-bottom: 2rem;
 .titre-menu{
     font-family: shrikhand,cursive;
 }
-.menu-com{
-    height: 2rem;
-    width:2rem;
-    border: 0 solid transparent;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    position: relative;
-    background-color:black;
-} 
-.menu-com:hover::before{
-    opacity: 1;
-} 
-.menu-com::before{
-    opacity: 0;
-    transition: .5s;
-    content: "";
-    background: linear-gradient(0deg,#9356dc,#ff79da);
-} 
-.menu-com::before,.com-menu{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
-.menu-com:hover .menu-sans{
-    opacity: 0;
-}
-.com-menu{
-    transition-duration: .25s;
-    background-color: #f6f6f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /*mix-blend-mode: lighten;*/
-} 
+
 .sous-menus{
     display: grid;
 }
@@ -492,7 +602,7 @@ margin-bottom: 2rem;
     left: 0;
     bottom:0;
 }
-/* Début Règles @keyframes pour le contrôle de l'animation */
+/* DÃ©but RÃ¨gles @keyframes pour le contrÃ´le de l'animation */
 @keyframes apparition-elt {
     0% {
         transform: scale(0)
@@ -500,9 +610,9 @@ margin-bottom: 2rem;
       100% {
         transform: scale(1);
       }
-    
+
 }
-/* Fin règle @keyframes pour le contrôle de l'animation */
+/* Fin rÃ¨gle @keyframes pour le contrÃ´le de l'animation */
 
 .eltmenu{
     background-color: white;
@@ -510,7 +620,7 @@ margin-bottom: 2rem;
     display: flex;
     border-radius: 0.75rem;
     margin: 1rem 0;
-    box-shadow: 0.25rem 0.25rem 1re rgba(0,0,0,0.1);
+    box-shadow: 0.25rem 0.25rem 1rem rgba(0,0,0,0.1);
     overflow: hidden;
     cursor: pointer;
     animation:apparition-elt .6s;
@@ -576,31 +686,31 @@ margin-bottom: 2rem;
 }
 
 .delai-0{
-    animation-delay: 0s; 
+    animation-delay: 0s;
 }
 .delai-1{
-    animation-delay: 0.1s; 
+    animation-delay: 0.1s;
 }
 .delai-2{
-    animation-delay: 0.2s; 
+    animation-delay: 0.2s;
 }
 .delai-3{
-    animation-delay: 0.3s; 
+    animation-delay: 0.3s;
 }
 .delai-4{
-    animation-delay: 0.4s; 
+    animation-delay: 0.4s;
 }
 .delai-5{
-    animation-delay: 0.5s; 
+    animation-delay: 0.5s;
 }
 .delai-6{
-    animation-delay: 0.6s; 
+    animation-delay: 0.6s;
 }
 .delai-7{
-    animation-delay: 0.7s; 
+    animation-delay: 0.7s;
 }
 .delai-8{
-    animation-delay: 0.8s; 
+    animation-delay: 0.8s;
 }
 
 .ibaro-bouton{
@@ -629,10 +739,10 @@ margin-bottom: 2rem;
 .commandBtn a {
     text-decoration: none;
     color: inherit;
-    
+
   }
 /*Fin  mise en page des menus */
-/* Début mise en forme tablette les pages des menus */
+/* DÃ©but mise en forme tablette les pages des menus */
 @media screen and (min-width:769px) {
     .sous-menus{
         display: flex;
@@ -644,4 +754,3 @@ margin-bottom: 2rem;
     }
 }
 /* Fin mise en forme tablette les pages menus */
- 
