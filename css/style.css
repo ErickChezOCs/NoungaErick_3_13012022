@@ -22,10 +22,8 @@ html{
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 2;
-  /* On passe le display du chargeur à none */
-  display: none;
-  /* le temps de finir les transitions sur les coeurs */
+  z-index: 2; 
+  display: flex;
   justify-content: center;
   align-items: center;
   animation: disparait 6000ms 3000ms forwards;
